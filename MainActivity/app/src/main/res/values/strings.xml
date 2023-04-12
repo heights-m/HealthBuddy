@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Health Buddy</string>
+    <string name="tab_text_home">Home</string>
+    <string name="tab_text_profile">Profile</string>
+    <string name="home_txt_1">KCALS REMAINING</string>
+    <string name="eaten_txt">eaten</string>
+    <string name="burned_txt">burned</string>
+    <string name="proteins_txt">proteins</string>
+    <string name="carbs_txt">carbs</string>
+    <string name="fats_txt">fats</string>
+    <string name="active_time">active time</string>
+    <string name="kcals_burned">kcals burned</string>
+    <string name="steps">steps</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="snacks">Snacks</string>
+    <string name="kcal">kcal</string>
+    <string name="kcal_per">kcal per</string>
+    <string name="meal_time">Meal Time:</string>
+
+</resources>

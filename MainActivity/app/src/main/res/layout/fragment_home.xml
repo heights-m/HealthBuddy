@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_grey"
+        tools:context=".ui.main.HomeFragment"
+        android:orientation="vertical" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sectionOverview"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/labelOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Overview"
+                android:textColor="@color/green_main"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/dividerOver"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerOver"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="35dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintBottom_toTopOf="@+id/netProgressBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/netProgressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:indeterminateOnly="false"
+                android:progress="40"
+                android:progressDrawable="@drawable/circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/netRemainInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="0000"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/netProgressBar"
+                app:layout_constraintEnd_toEndOf="@+id/netProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/netProgressBar"
+                app:layout_constraintTop_toTopOf="@+id/netProgressBar" />
+
+            <TextView
+                android:id="@+id/kcalsRemainTxt"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/home_txt_1"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/netRemainInt"
+                app:layout_constraintStart_toStartOf="@+id/netRemainInt"
+                app:layout_constraintTop_toBottomOf="@+id/netRemainInt" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="125dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="125dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerOver">
+
+                <TextView
+                    android:id="@+id/overviewIntakeInt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0000"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/overviewIntakeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eaten_txt"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/kcalBurnedInt"
+                    android:layout_marginTop="35dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0000"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/kcalBurnedTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/burned_txt"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/dividerOver">
+
+                <TextView
+                    android:id="@+id/proteinOverviewInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/dark_grey"/>
+
+                <TextView
+                    android:id="@+id/proteinOverviewTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/proteins_txt"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/carbOverviewInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="TextView"
+                    android:textColor="@color/dark_grey"/>
+
+                <TextView
+                    android:id="@+id/carbOverviewTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/carbs_txt"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/fatOverviewInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="TextView"
+                    android:textColor="@color/dark_grey"/>
+
+                <TextView
+                    android:id="@+id/fatOverviewTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fats_txt"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sectionFitness"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/labelFitness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fitness"
+                android:layout_marginStart="3dp"
+                android:textColor="@color/green_main"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFitness"
+                app:layout_constraintStart_toEndOf="@+id/iconFitness"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerFitness"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconFitness"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_fitness_icon_green"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFitness"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerFitness1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="23dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerFitness2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="23dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.333" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.666" />
+
+            <TextView
+                android:id="@+id/activeTimeInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dividerFitness1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerFitness"/>
+
+            <TextView
+                android:id="@+id/activeTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/active_time"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/activeTimeInt"
+                app:layout_constraintStart_toStartOf="@+id/activeTimeInt"
+                app:layout_constraintTop_toBottomOf="@+id/activeTimeInt" />
+
+            <TextView
+                android:id="@+id/fitBurnedInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dividerFitness2"
+                app:layout_constraintStart_toEndOf="@+id/dividerFitness1"
+                app:layout_constraintTop_toBottomOf="@+id/dividerFitness" />
+
+            <TextView
+                android:id="@+id/fitBurnedTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kcals_burned"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/fitBurnedInt"
+                app:layout_constraintStart_toStartOf="@+id/fitBurnedInt"
+                app:layout_constraintTop_toBottomOf="@+id/fitBurnedInt" />
+
+            <TextView
+                android:id="@+id/stepCountInt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toBottomOf="@+id/dividerFitness" />
+
+            <TextView
+                android:id="@+id/stepCountTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/steps"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/stepCountInt"
+                app:layout_constraintStart_toStartOf="@+id/stepCountInt"
+                app:layout_constraintTop_toBottomOf="@+id/stepCountInt" />
+
+            <ImageButton
+                android:id="@+id/fitAddBtn"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/ic_add_darkgrey"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFitness"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sectionFood"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/labelFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="Food"
+                android:textColor="@color/green_main"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFood"
+                app:layout_constraintStart_toEndOf="@+id/iconFood"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerFood"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="23dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconFood"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_food_icon_green"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFood"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/intakeFraction"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginEnd="8dp"
+                android:text=" 0000 / 0000"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.52" />
+
+            <View
+                android:id="@+id/dividerFood1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline10" />
+
+            <View
+                android:id="@+id/dividerFood2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="23dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline10" />
+
+            <include
+                android:id="@+id/breakfastButton"
+                layout="@layout/home_meal_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+
+                app:layout_constraintBottom_toTopOf="@+id/dividerFood1"
+                app:layout_constraintEnd_toStartOf="@+id/dividerFood2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/dividerFood2"
+                app:layout_constraintVertical_bias="0.25"/>
+
+            <TextView
+                android:id="@+id/breakfastTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/breakfast"
+                android:textColor="@color/grey_accent"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline10"
+                app:layout_constraintEnd_toEndOf="@+id/breakfastButton"
+                app:layout_constraintStart_toStartOf="@+id/breakfastButton"
+                app:layout_constraintTop_toBottomOf="@+id/breakfastButton" />
+
+
+            <include
+                android:id="@+id/lunchButton"
+                layout="@layout/home_meal_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/dividerFood1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dividerFood2"
+                app:layout_constraintTop_toTopOf="@+id/dividerFood2"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <TextView
+                android:id="@+id/lunchTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/lunch"
+                android:textColor="@color/grey_accent"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline10"
+                app:layout_constraintEnd_toEndOf="@+id/lunchButton"
+                app:layout_constraintStart_toStartOf="@+id/lunchButton"
+                app:layout_constraintTop_toBottomOf="@+id/lunchButton" />
+
+            <include
+                android:id="@+id/dinnerButton"
+                layout="@layout/home_meal_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dividerFood2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerFood1"
+                app:layout_constraintVertical_bias="0.25"/>
+
+            <TextView
+                android:id="@+id/dinnerTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dinner"
+                android:textColor="@color/grey_accent"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/dinnerButton"
+                app:layout_constraintStart_toStartOf="@+id/dinnerButton"
+                app:layout_constraintTop_toBottomOf="@+id/dinnerButton" />
+
+            <include
+                android:id="@+id/snacksButton"
+                layout="@layout/home_meal_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/dividerFood2"
+                app:layout_constraintTop_toBottomOf="@+id/dividerFood1"
+                app:layout_constraintVertical_bias="0.25"/>
+
+            <TextView
+                android:id="@+id/snacksTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/snacks"
+                android:textColor="@color/grey_accent"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/snacksButton"
+                app:layout_constraintStart_toStartOf="@+id/snacksButton"
+                app:layout_constraintTop_toBottomOf="@+id/snacksButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:text="HealthBuddy by Minsu Pak" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

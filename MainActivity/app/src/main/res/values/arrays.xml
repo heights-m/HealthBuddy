@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="profile_2_titles">
+        <item>Activity Level:</item>
+        <item>Intake Goal:</item>
+        <item>Step Goal:</item>
+        <item>Activity Goal:</item>
+        <item>BMR:</item>
+    </string-array>
+
+    <string-array name="FoodUnitOptions">
+        <item>Serving(s)</item>
+        <item>grams</item>
+        <item>mL</item>
+        <item>cup(s)</item>
+    </string-array>
+
+</resources>
